@@ -1,0 +1,10 @@
+<% target = "world" %>
+<h1><%= "hello #{target}!" %></h1>
+
+<% 3.times do |n| %>
+<h2><%= n %></h2>
+<% end %>
+
+<span>This is page <%= @page %></span>
+<div>This is id <%= @id %></div>
+<div>Next id is  <%= @id.to_i + 1 %></div>

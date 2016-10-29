@@ -1,0 +1,9 @@
+<h1>Hello world from hello!</h1>
+<% @array.each do |n| %>
+	<h2><%= n %></h2>
+<% end %>
+
+<ul>
+	<li><%= link_to('index', {:controller => 'demo', :action => 'index'}) %></li>
+<li><%= link_to('index with params', {:controller => 'demo', :action => 'index', :page => 5, :id => 20}) %></li>
+</ul>
