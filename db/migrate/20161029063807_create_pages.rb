@@ -7,8 +7,6 @@ class CreatePages < ActiveRecord::Migration[5.0]
       t.integer 'position'
       t.boolean 'visible', :default => false
       t.timestamps
-      t.datetime 'created_at'
-      t.datetime 'updated_at'
     end
 
     add_index(:pages, :subject_id)
