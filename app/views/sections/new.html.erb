@@ -1,12 +1,16 @@
 <%= link_to("<< Back to List", sections_path, :class => 'back-link') %>
 
 <div class="sections new">
-  <h2>Create Page</h2>
+  <h2>New Section</h2>
 
 
 	<%= form_for(@section) do |f| %>
 
 	<table summary="section form field">
+	<th>Page Id</th>
+	      <td><%= f.text_field(:page_id) %></td>
+	    </th>
+	</tr>
 	<tr>
 	  <th>Name</th>
 	    <td><%= f.text_field(:name) %></td>
@@ -17,21 +21,22 @@
 	    </th>
 	  </tr>
 	   <tr>
-	    <th>Link Name</th>
-	      <td><%= f.text_field(:permalink) %></td>
+	    <th>Content Type</th>
+	      <td><%= f.text_field(:content_type) %></td>
 	    </th>
 	  </tr>
 	  <tr>
 	    <th>Visible?</th>
 	    <td><%= f.text_field(:visible) %></td>
 	  </tr>
-	   <tr>
-	    <th>Subject Id</th>
-	      <td><%= f.text_field(:subject_id) %></td>
+	  <tr>
+	    <th>Content</th>
+	      <td><%= f.text_area(:content, :cols => 33, :rows => 8) %></td>
 	    </th>
 	  </tr>
+	  
 
-	  <tr><td><%= f.submit("Create Page") %></td></tr>
+	  <tr><td><%= f.submit("Create Section") %></td></tr>
 	</table>
 	<% end %>
 
