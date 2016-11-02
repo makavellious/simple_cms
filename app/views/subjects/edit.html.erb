@@ -1,3 +1,4 @@
+<% @page_title = "Edit Subject '#{@subject.name}'" %>
 <%= link_to("<< Back to List", subjects_path, :class => 'back-link') %>
 
 <div class="subjects edit">
@@ -5,21 +6,7 @@
 
 
 	<%= form_for(@subject) do |f| %>
-
-	<table summary="Subject form field">
-	<tr>
-	  <th>Name</th>
-	    <td><%= f.text_field(:name) %></td>
-	    </tr>
-	  <tr>
-	    <th>Position</th>
-	      <td><%= f.text_field(:position) %></td>
-	    </th>
-	  </tr>
-	  <tr>
-	    <th>Visible?</th>
-	    <td><%= f.text_field(:visible) %></td>
-	  </tr>
+	<%= render(:partial => 'form', :locals => {:f => f}) %>
 
 	  <tr><td><%= f.submit("Update Subject") %></td></tr>
 	</table>

@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
+
+  layout 'admin'
+
   def index
-  	@pages = Page.all
+  	@pages = Page.sorted
   end
 
   def show
@@ -29,7 +32,7 @@ class PagesController < ApplicationController
   def update
   	@page = Page.find(params[:id])
   	if @page.update_attributes(page_params)
-  		flash[:notice] = "Page editted successfully"
+  		flash[:notice] = "Page edited successfully"
   		redirect_to(page_path(@page))
   	else
   		render('edit')

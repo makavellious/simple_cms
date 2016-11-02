@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'demo/escape_output'
+
 
   root 'demo#index'
   get 'demo/index'

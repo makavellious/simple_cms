@@ -14,4 +14,8 @@ class DemoController < ApplicationController
   def other_hello
     redirect_to('http://www.google.com')
   end
+
+  def escape_output
+  end
+
 end
