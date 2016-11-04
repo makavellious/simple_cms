@@ -3,7 +3,7 @@ class SubjectsController < ApplicationController
   layout 'admin'
   
   def index
-    @subjects = Subject.sorted
+    @subjects = Subject.sorted.paginate(:page => params[:page], :per_page => 100)
   end
 
   def show
@@ -11,7 +11,7 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subject = Subject.new({:name => "default"})
+    @subject = Subject.new
     @subject_count = Subject.count + 1
   end
 

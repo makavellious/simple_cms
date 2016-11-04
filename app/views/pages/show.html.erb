@@ -5,10 +5,7 @@
 
 
 	<table summary="page detail view">
-	  <tr>
-	    <th>Subject Name</th>
-	    <td><%= @page.subject.name %></td>
-	  </tr>
+	
 		<tr>
 		  <th>Name</th>
 		  <td><%= @page.name %></td>
@@ -24,6 +21,11 @@
 		<tr>
 		  <th>Visible?</th>
 		  <td><%= @page.visible ? "Yes" : "No" %></td>
+		</tr>
+	    <tr>
+	      <th>Subject Name</th>
+	      <td><%= @page.subject.name %></td>
+	    </tr>
 		<tr>
 		  <th>Created At</th>
 		  <td><%= @page.created_at %></td>

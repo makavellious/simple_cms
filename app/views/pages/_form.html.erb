@@ -1,0 +1,24 @@
+	<table summary="page form field">
+	<tr>
+	  <th>Name</th>
+	    <td><%= f.text_field(:name) %></td>
+	    </tr>
+	  <tr>
+	    <th>Position</th>
+	      <td><%= f.select(:position, 1..@pages_count) %></td>
+	    </th>
+	  </tr>
+	   <tr>
+	    <th>Link Name</th>
+	      <td><%= f.text_field(:permalink) %></td>
+	    </th>
+	  </tr>
+	  <tr>
+	    <th>Visible?</th>
+	    <td><%= f.check_box(:visible) %></td>
+	  </tr>
+	   <tr>
+	    <th>Subject</th>
+	      <td><%= f.select(:subject_id, @subjects.map {|s| ["#{s.id} - #{s.name}", s.id]}) %></td>
+	    </th>
+	  </tr>

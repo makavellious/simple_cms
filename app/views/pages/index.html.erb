@@ -5,21 +5,22 @@
 
 <table class="listing" summary="page list">
   <tr class="header">
-    <th>Subject</th>
     <th>#</th>
     <th>Page</th>
     <th>Visible</th>
     <th>Permalink</th>
+    <th>Subject</th>
     <th>Actions</th>
+   
   </tr>
 
   <% @pages.each do |page| %>
     <tr>
-    <td><%= page.subject.name %>
 	  <td><%= page.position %></td>
 	  <td><%= page.name %></td>
-	  <td class="center"><%= status_tag(page.visible) %></td>
-	  <td class="center"><%= page.permalink %></td>
+	  <td><%= status_tag(page.visible) %></td>
+	  <td><%= page.permalink %></td>
+	  <td><%= page.subject.name %>
 	  <td class="actions">
 	    <%= link_to("Show", page_path(page), :class => 'action show') %>
 	    <%= link_to("Edit", edit_page_path(page), :class => 'action edit') %>
