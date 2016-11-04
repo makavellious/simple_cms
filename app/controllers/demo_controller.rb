@@ -1,7 +1,7 @@
 class DemoController < ApplicationController
   
-  layout false
-
+  layout 'application'
+  
   def index
     @id = params['id']
     @page = params['page']

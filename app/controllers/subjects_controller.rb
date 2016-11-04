@@ -12,10 +12,12 @@ class SubjectsController < ApplicationController
 
   def new
     @subject = Subject.new({:name => "default"})
+    @subject_count = Subject.count + 1
   end
 
   def create
     @subject = Subject.new(subject_params)
+    @subject_new = Subject.count + 1
     
 
     if @subject.save
@@ -29,10 +31,12 @@ class SubjectsController < ApplicationController
 
   def edit
     @subject = Subject.find(params[:id])
+    @subject_count = Subject.count
   end
 
   def update
-     @subject = Subject.find(params[:id])
+    @subject = Subject.find(params[:id])
+    @subject_count = Subject.count
     
 
     if @subject.update_attributes(subject_params)
