@@ -1,6 +1,9 @@
 class SubjectsController < ApplicationController
 
   layout 'admin'
+
+  before_action :confirm_logged_in
+
   
   def index
     @subjects = Subject.sorted.paginate(:page => params[:page], :per_page => 100)

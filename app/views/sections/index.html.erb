@@ -3,7 +3,8 @@
 
 <%= link_to("Add New section", new_section_path, :class => 'action new') %>
 
-<table class="listing" summary="section list">
+<table class="listing tablesorter" summary="section list" id="myTable">
+  <thead>
   <tr class="header">
     <th>Page</th>
     <th>#</th>
@@ -11,7 +12,8 @@
     <th>Visible</th>
     <th>Actions</th>
   </tr>
-
+  </thead>
+  <tbody>
   <% @sections.each do |section| %>
     <tr>
     <td><%= section.page.name %>
@@ -25,7 +27,8 @@
 	  </td>
 	</tr>
     <% end %>
+    </tbody>
   </table>
   
-  <%= will_paginate @subjects %>
+  <%= will_paginate @sections %>
 </div>

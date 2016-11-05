@@ -1,9 +1,10 @@
 class SectionsController < ApplicationController
 
   layout 'admin'
+  before_action :confirm_logged_in
 
   def index
-    @sections = Section.sorted
+    @sections = Section.sorted.paginate(:page => params[:page])
   end
 
   def show

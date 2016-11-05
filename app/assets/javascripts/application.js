@@ -15,3 +15,12 @@
 // require turbolinks
 // require_tree .
 //= require demo
+//= require jquery-tablesorter
+
+$(function(){
+	$("#myTable").tablesorter({
+		theme: 'blue'
+	});
+});
+
+
