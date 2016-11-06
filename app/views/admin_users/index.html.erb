@@ -1,0 +1,26 @@
+<% @page_title = "Admin Users" %>
+
+<%= link_to("<< Back to Admin Menu", access_menu_path) %>
+<h2>Admin Users</h2>
+<%= link_to("Create Admin User", new_admin_user_path) %>
+<table>
+    <thead>
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th class="center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @admin_users.each do |admin_user| %>
+        <tr>
+            <td><%= admin_user.last_name %></td>
+            <td><%= admin_user.first_name %></td>
+            <td><%= admin_user.username %></td>
+            <td><%= admin_user.email %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

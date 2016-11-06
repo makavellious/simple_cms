@@ -1,7 +1,8 @@
 class AdminUser < ApplicationRecord
+	
+	scope :sorted, lambda{order("last_name ASC", "first_name ASC")}
 
 	has_secure_password
-	attr_accessor :first_name
 	has_many :section_edits
 	has_many :sections, :through => :section_edits
 
@@ -13,11 +14,16 @@ class AdminUser < ApplicationRecord
 	                       :length => {:maximum => 25}
 	validates :last_name,  :presence => true,
 	                       :length => {:maximum => 50}
-  validates :username,	 :presence => true,
+    validates :username,	 :presence => true,
   											 :uniqueness => true 	
 	validates :email,      :presence => true,
 												 :length => { :maximum => 50},
 												 :uniqueness => true,
 												 :format => {:with => EMAIL_REGEX},
 												 :confirmation => true
+												 
+  def name
+  	first_name + " " + last_name
+  end
+  	
 end

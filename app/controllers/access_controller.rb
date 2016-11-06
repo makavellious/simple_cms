@@ -6,6 +6,7 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
   def menu
   	#display text and links
+  	@name = AdminUser.find(session[:user_id]).name
   end
 
   def login
@@ -43,11 +44,11 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
   private
 
   def confirm_logged_in
-  	unless session[:user_id]
+    unless session[:user_id]
 	  	flash[:notice] = "Please log in"
 	  	redirect_to(access_login_path)
 	  	#prevents requested action from running
-	  end
+    end
   end
   
 end

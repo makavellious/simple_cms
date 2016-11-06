@@ -1,0 +1,15 @@
+<% @page_title = "New Admin User" %>
+
+<%= link_to("<< Show all Admin Users", admin_users_path) %>
+<h2>New Admin User</h2>
+    
+
+<%= form_for(@admin_user) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <tr>
+      <td><%= f.submit("Create Admin User") %></td>
+    </tr>
+  </table>
+<% end %> 
+    
+</table>

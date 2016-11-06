@@ -1,0 +1,15 @@
+<% @page_title = "Edit Admin User" %>
+
+<%= link_to("<< Show all Admin Users", admin_users_path) %>
+<h2>Edit Admin User</h2>
+    
+
+<%= form_for(@admin_user) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <tr>
+      <td><%= f.submit("Update Admin User") %></td>
+    </tr>
+  </table>
+<% end %> 
+    
+</table>
