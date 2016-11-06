@@ -32,6 +32,9 @@ class AdminUsersController < ApplicationController
     @admin_user = AdminUser.find(params[:id])
     if @admin_user.update_attributes(admin_user_params)
       flash[:notice] = "Admin User '#{@admin_user.name}'' updated successfully"
+      redirect_to(admin_users_path)
+    else
+      flash.now[:notice] = @admin_user.errors.full_messages.join(". ").truncate(100)
     end
   end
 

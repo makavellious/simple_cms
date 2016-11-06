@@ -1,2 +1,13 @@
-<h1>AdminUsers#delete</h1>
-<p>Find me in app/views/admin_users_controller/delete.html.erb</p>
+<% @page_title = "Admin Users" %>
+
+<%= link_to("<< Back to Admin Menu", access_menu_path) %>
+<h2>Delete Admin User</h2>
+<p>Are you sure you want to delete account for '<%= @admin_user.name %>'?</p>
+            <td><%= form_for(@admin_user, :method => 'delete') do |f|%>
+            <%= f.submit("Delete Account") %>
+            <% end %>
+            </td>
+        </tr>
+      
+    </tbody>
+</table>

@@ -6,7 +6,7 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
   def menu
   	#display text and links
-  	@name = AdminUser.find(session[:user_id]).name
+    @user = AdminUser.where(:id => params[:id])
   end
 
   def login
@@ -50,5 +50,5 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 	  	#prevents requested action from running
     end
   end
-  
+ 
 end
