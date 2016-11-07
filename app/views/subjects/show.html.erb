@@ -18,11 +18,11 @@
 		  <td><%= @subject.visible ? "Yes" : "No" %></td>
 		<tr>
 		  <th>Created At</th>
-		  <td><%= @subject.created_at %></td>
+		  <td><%= time_ago_in_words @subject.created_at %> ago</td>
 		</tr>
 		<tr>
 		  <th>Last Updated</th>
-		  <td><%= @subject.updated_at %></td>
+		  <td><%= time_ago_in_words(@subject.updated_at) %> ago</td>
 		</tr>
 	</table>
 </div>

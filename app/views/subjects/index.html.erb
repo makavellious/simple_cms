@@ -32,6 +32,8 @@
     <% end %>
   </tbody>
   </table>
+  
+  <h2><%= pluralize(@subjects.count, "subject") %> found</h2>
 
   <%= will_paginate @subjects %>
 
